@@ -29,17 +29,18 @@ export const SidebarItem = ({ icon: Icon, label, href }: SidebarItemProps) => {
             "text-sky-700 bg-sky-200/20 hover:bg-sky-200/20 hover:text-sky-700"
         )}
       >
-        <div className="flex items-center gap-x-4 py-4">
+        <div className="flex items-center gap-x-4 py-4 h-full">
           <Icon
             size={22}
-            className={cn("text-slate-500", isActive && "text-sky-700")}
+            className={cn("text-slate-500 ", isActive && "text-sky-700")}
           />
                 {label}
                 
             </div>
             <div
                 className={cn(
-                    "ml-auto opacity-0 border-2"
+                  "ml-auto opacity-0 border-2 py-6 border-sky-700 transition-all",
+                  isActive && "opacity-100 h-full"
                 ) } />
       </button>
     );
