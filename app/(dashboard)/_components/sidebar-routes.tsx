@@ -5,21 +5,6 @@ import { SidebarItem } from "./sidebar-item";
 import { usePathname } from "next/navigation";
 
 
-const guestRoutes = [
-    {
-        icon: Layout,
-        label: "Dashboard",
-        href:'/'
-        
-    },
-    {
-        icon: Compass,
-        label: "Browse",
-        href:'/search'
-        
-    },
-    
-]
 const teacherRoutes = [
   {
     icon: List,
@@ -34,8 +19,8 @@ const teacherRoutes = [
 ];
 export const SidebarRoutes = () => {
     const pathname = usePathname();
-    const isTeacherPage = pathname?.includes("/teacher");
-    const routes = isTeacherPage ? teacherRoutes : guestRoutes;
+    
+    const routes =  teacherRoutes
 
     return (
         <div>
